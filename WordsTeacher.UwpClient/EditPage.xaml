@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="AddWordBook" Content="Add Word Book" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddWordBook_Click"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="AddWordBook" Content="Add Word Book" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddWordBook_Click" Margin="5"/>
+        <Button x:Name="AddWordCard" Content="Add Word Card" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Click="AddWordCard_Click" />
+        </StackPanel>
     </Grid>
 </Page>

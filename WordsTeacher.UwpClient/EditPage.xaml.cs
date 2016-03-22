@@ -31,5 +31,10 @@ namespace WordsTeacher.UwpClient
         {
             this.Frame.Navigate(typeof (CreateWordBookPage));
         }
+
+        private void AddWordCard_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof (CreateWordCardPage));
+        }
     }
 }

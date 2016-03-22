@@ -98,6 +98,9 @@
     <Compile Include="CreateWordBookPage.xaml.cs">
       <DependentUpon>CreateWordBookPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateWordCardPage.xaml.cs">
+      <DependentUpon>CreateWordCardPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,7 @@
     <Compile Include="Models\WebApiRequests.cs" />
     <Compile Include="Models\Words.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EditWordCardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -130,6 +134,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="CreateWordBookPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateWordCardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

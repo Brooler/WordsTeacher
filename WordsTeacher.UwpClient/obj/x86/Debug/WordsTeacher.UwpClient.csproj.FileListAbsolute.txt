@@ -209,3 +209,8 @@ C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsT
 C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordBookPage.g.cs
 C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordBookPage.xaml
 C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordBookPage.xbf
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\bin\x86\Debug\CreateWordCardPage.xbf
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordCardPage.g.i.cs
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordCardPage.g.cs
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordCardPage.xaml
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordCardPage.xbf
