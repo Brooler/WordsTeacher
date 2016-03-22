@@ -73,4 +73,69 @@ namespace WordsTeacher.WebUI.Models
             }
         }
     }
+
+    public static class WordCardsApiRequest
+    {
+       //GET: get word cards list
+        public static async Task<IEnumerable<WordCard>> GetWordCardsList()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress=new Uri("http://localhost:37533/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/wordcards");
+                if (response.IsSuccessStatusCode)
+                {
+                    IEnumerable<WordCard> cards = await response.Content.ReadAsAsync<IEnumerable<WordCard>>();
+                    return cards;
+                }
+                return null;
+            }
+        }
+        //GET: get word card by id
+        public static async Task<WordCard> GetWordCard(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress=new Uri("http://localhost:37533/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/wordcards/" + id);
+                if (response.IsSuccessStatusCode)
+                {
+                    WordCard card = await response.Content.ReadAsAsync<WordCard>();
+                    return card;
+                }
+                else return null;
+            }
+        } 
+        //POST: add word card
+        public static async Task AddWordCard(WordCard card)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:37533/");
+                await client.PostAsJsonAsync("api/wordcards", card);
+            }
+        } 
+        //PUT: update word card
+        public static async Task UpdateWordCard(int id, WordCard card)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress= new Uri("http://localhost:37533/");
+                await client.PutAsJsonAsync("api/wordcards/" + id, card);
+            }
+        } 
+        //DELETE: delete word card
+        public static async Task DeleteWordCard(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress=new Uri("http://localhost:37533/");
+                await client.DeleteAsync("api/wordcards/" + id);
+            }
+        } 
+    }
 }

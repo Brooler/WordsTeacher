@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="WordsTeacher.UwpClient.CreateWordBookPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WordsTeacher.UwpClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:ConnectionId='1' x:Name="Header" Style="{ThemeResource HeaderTextBlockStyle}" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Create New Word Book"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Title:" FontSize="28"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Input Language:" FontSize="28"/>
+            <TextBlock Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Translation Language:" FontSize="28"/>
+            <TextBox x:ConnectionId='2' x:Name="Title" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" FontSize="28" Margin="10"/>
+            <TextBox x:ConnectionId='3' x:Name="InputLangage" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" FontSize="28" Margin="10"/>
+            <TextBox x:ConnectionId='4' x:Name="OutputLanguage" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" FontSize="28" Margin="10"/>
+            <Button x:ConnectionId='5' x:Name="Submit" Grid.Column="1" Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" FontSize="24" Content="Submit"                     />
+        </Grid>
+    </Grid>
+</Page>
+

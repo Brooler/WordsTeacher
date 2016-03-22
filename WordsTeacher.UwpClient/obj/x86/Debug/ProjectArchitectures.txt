@@ -1,0 +1,1 @@
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\WordsTeacher.UwpClient.csproj;x86
