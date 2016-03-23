@@ -214,3 +214,16 @@ C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsT
 C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordCardPage.g.cs
 C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordCardPage.xaml
 C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\CreateWordCardPage.xbf
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\bin\x86\Debug\WordBookItems.xbf
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\WordBookItems.g.i.cs
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\WordBookItems.g.cs
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\WordBookItems.xaml
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\WordBookItems.xbf
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\layout.resfiles
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\layout.resfiles.intermediate
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\Resources.resfiles
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\Resources.resfiles.intermediate
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\pri.resfiles
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\pri.resfiles.intermediate
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\priconfig.xml
+C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\obj\x86\Debug\System.Net.Http.Formatting\priconfig.xml.intermediate

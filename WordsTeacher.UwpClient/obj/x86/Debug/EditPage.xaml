@@ -9,8 +9,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:ConnectionId='1' x:Name="AddWordBook" Content="Add Word Book" HorizontalAlignment="Center" VerticalAlignment="Center"                           Margin="5"/>
-        <Button x:ConnectionId='2' x:Name="AddWordCard" Content="Add Word Card" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"                           />
+            <Button x:ConnectionId='1' x:Name="AddWordBook" Content="Add Word Book" HorizontalAlignment="Center" VerticalAlignment="Center"                           Margin="5"/>
+            <Button x:ConnectionId='2' x:Name="AddWordCard" Content="Add Word Card" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"                           />
+            <Button x:ConnectionId='3' Content="View Books List" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"                     />
         </StackPanel>
     </Grid>
 </Page>
