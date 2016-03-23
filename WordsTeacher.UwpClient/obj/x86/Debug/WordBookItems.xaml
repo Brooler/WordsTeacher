@@ -9,23 +9,29 @@
     xmlns:data="using:WordsTeacher.UwpClient.ViewModels">
     <Page.Resources>
         <DataTemplate x:Key="ImageTextListMailFolderTemplate"                                         >
-            <Grid x:ConnectionId='2' Width="280">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:ConnectionId='3'                       Style="{StaticResource BaseTextBlockStyle}"
+            <Grid x:ConnectionId='2' Width="700">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock x:ConnectionId='5'                       Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='4'                               Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock x:ConnectionId='6'                               Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='5'                                Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock x:ConnectionId='7'                                Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='6'                             Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock x:ConnectionId='8'                             Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                 </StackPanel>
+                <CommandBar Background="Transparent" IsOpen="False" Width="200" HorizontalAlignment="Right">
+                    <AppBarButton x:ConnectionId='3' Icon="Add" Label="Add Word Card"                           />
+                    <AppBarButton x:ConnectionId='4' Icon="Edit" Label="Edit Book"                             />
+                </CommandBar>
             </Grid>
         </DataTemplate>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:ConnectionId='7'                              ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}"/>
-        
+        <StackPanel>
+            <ListView x:ConnectionId='9'                              ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}" SelectionMode="Multiple"/>
+            <Button Content="Begin Learning" FontSize="18" Margin="20"/>
+        </StackPanel>
     </Grid>
 </Page>
 
