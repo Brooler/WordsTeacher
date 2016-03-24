@@ -95,16 +95,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateWordBookPage.xaml.cs">
+    <Compile Include="ViewModels\DeleteWordBookViewModel.cs" />
+    <Compile Include="ViewModels\DeleteWordCardsViewModel.cs" />
+    <Compile Include="Views\CreateWordBookPage.xaml.cs">
       <DependentUpon>CreateWordBookPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateWordCardPage.xaml.cs">
+    <Compile Include="Views\CreateWordCardPage.xaml.cs">
       <DependentUpon>CreateWordCardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditPage.xaml.cs">
+    <Compile Include="Views\DeleteWordBookPage.xaml.cs">
+      <DependentUpon>DeleteWordBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteWordCard.xaml.cs">
+      <DependentUpon>DeleteWordCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\WebApiRequests.cs" />
@@ -112,7 +120,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EditWordCardViewModel.cs" />
     <Compile Include="ViewModels\WordBookItemsViewModel.cs" />
-    <Compile Include="WordBookItems.xaml.cs">
+    <Compile Include="Views\WordBookItems.xaml.cs">
       <DependentUpon>WordBookItems.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -137,23 +145,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CreateWordBookPage.xaml">
+    <Page Include="Views\CreateWordBookPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateWordCardPage.xaml">
+    <Page Include="Views\CreateWordCardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditPage.xaml">
+    <Page Include="Views\DeleteWordBookPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\DeleteWordCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WordBookItems.xaml">
+    <Page Include="Views\WordBookItems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

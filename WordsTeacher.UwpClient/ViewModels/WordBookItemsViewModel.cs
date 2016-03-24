@@ -13,7 +13,10 @@ namespace WordsTeacher.UwpClient.ViewModels
         public string Title { get; set; }
         public string InputLanguage { get; set; }
         public string OutputLanguage { get; set; }
-        public int WordsNumber { get; set; } 
-         
+        public int WordsNumber { get; set; }
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

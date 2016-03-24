@@ -1,6 +1,8 @@
 App.xbf
-CreateWordBookPage.xbf
-CreateWordCardPage.xbf
-EditPage.xbf
-MainPage.xbf
-WordBookItems.xbf
+Views\CreateWordBookPage.xbf
+Views\CreateWordCardPage.xbf
+Views\DeleteWordBookPage.xbf
+Views\DeleteWordCard.xbf
+Views\EditPage.xbf
+Views\MainPage.xbf
+Views\WordBookItems.xbf
