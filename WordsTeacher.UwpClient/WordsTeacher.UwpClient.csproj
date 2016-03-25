@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CreateBookViewModel.cs" />
     <Compile Include="ViewModels\DeleteWordBookViewModel.cs" />
     <Compile Include="ViewModels\DeleteWordCardsViewModel.cs" />
     <Compile Include="Views\CreateWordBookPage.xaml.cs">

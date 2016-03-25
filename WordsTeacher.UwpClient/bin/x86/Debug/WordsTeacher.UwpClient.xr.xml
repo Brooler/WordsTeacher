@@ -56,9 +56,9 @@
       <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Content" />
-      <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Content" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Click" />
@@ -69,10 +69,10 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="IsActive" />
     </RootType>
-    <RootType FullName="WordsTeacher.UwpClient.CreateWordBookPage" />
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
       <RootProperty Name="Mode" />
     </RootType>
+    <RootType FullName="WordsTeacher.UwpClient.CreateWordBookPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="FontSize" />
       <RootProperty Name="ItemsSource" />

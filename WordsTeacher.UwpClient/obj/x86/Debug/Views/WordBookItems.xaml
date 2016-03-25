@@ -11,11 +11,11 @@
         <DataTemplate x:Key="ImageTextListMailFolderTemplate"                                         >
             <Grid x:ConnectionId='2' Width="700">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock x:ConnectionId='5'                       Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock x:ConnectionId='5'                            Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='6'                               Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock x:ConnectionId='6'                                    Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='7'                                Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock x:ConnectionId='7'                                     Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                     <TextBlock x:ConnectionId='8'                             Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
@@ -31,7 +31,7 @@
         <StackPanel>
             <TextBlock x:ConnectionId='9' x:Name="Header" Text="Word Books List" Style="{StaticResource HeaderTextBlockStyle}" Margin="10"/>
             <ProgressBar x:ConnectionId='10' x:Name="LoadingBar" IsIndeterminate="False" ShowPaused="True" ShowError="False"/>
-            <ListView x:ConnectionId='11' x:Name="BooksList"                               ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}" SelectionMode="Multiple"/>
+            <ListView x:ConnectionId='11' x:Name="BooksList"                               ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}" SelectionMode="Single"/>
             <Button x:ConnectionId='12' Content="Begin Learning" FontSize="18" Margin="20"                     />
             <Button x:ConnectionId='13' Content="Home" FontSize="18" Margin="20"                       />
         </StackPanel>

@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -72,13 +73,35 @@ namespace WordsTeacher.UwpClient
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof (MainPage), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
+            rootFrame.Navigated += RootFrame_Navigated;
+            SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
         }
 
-        /// <summary>
+        public void App_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (!e.Handled)
+            {
+                Frame frame = Window.Current.Content as Frame;
+                if (frame.CanGoBack)
+                {
+                    frame.GoBack();
+                    e.Handled = true;
+                }
+            }
+        }
+
+        public void RootFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                rootFrame.CanGoBack ? AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
+        }
+
+    /// <summary>
         /// Invoked when Navigation to a certain page fails
         /// </summary>
         /// <param name="sender">The Frame which failed navigation</param>

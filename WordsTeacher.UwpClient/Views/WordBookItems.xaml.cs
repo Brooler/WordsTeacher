@@ -39,12 +39,9 @@ namespace WordsTeacher.UwpClient
             IEnumerable<WordCard> cards = await WordCardsApiRequest.GetWordCardsList();
             foreach (var item in await WordBooksApiRequest.GetWordBooksList())
             {
-
                 var book = new WordBookItemsViewModel()
                 {
-                    Title = item.Title,
-                    InputLanguage = item.InputLanguage,
-                    OutputLanguage = item.OutputLanguage,
+                    Book=item,
                     WordsNumber = cards.Where(m => m.BookId == item.Id).Count()
                 };
                 Books.Add(book);
@@ -58,8 +55,8 @@ namespace WordsTeacher.UwpClient
         //Edit Button
         private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
-            
-            Frame.Navigate(typeof (CreateWordBookPage));
+            Frame.Navigate(typeof (CreateWordBookPage), 
+                ((WordBookItemsViewModel)BooksList.SelectedItem).Book);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

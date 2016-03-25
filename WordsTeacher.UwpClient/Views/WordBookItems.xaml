@@ -11,11 +11,11 @@
         <DataTemplate x:Key="ImageTextListMailFolderTemplate" x:DataType="data:WordBookItemsViewModel">
             <Grid Width="700">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="{x:Bind Title}" Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock Text="{x:Bind Book.Title}" Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                    <TextBlock Text="{x:Bind InputLanguage}" Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock Text="{x:Bind Book.InputLanguage}" Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                    <TextBlock Text="{x:Bind OutputLanguage}" Style="{StaticResource BaseTextBlockStyle}"
+                    <TextBlock Text="{x:Bind Book.OutputLanguage}" Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                     <TextBlock Text="{x:Bind WordsNumber}" Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
@@ -31,7 +31,7 @@
         <StackPanel>
             <TextBlock x:Name="Header" Text="Word Books List" Style="{StaticResource HeaderTextBlockStyle}" Margin="10"/>
             <ProgressBar x:Name="LoadingBar" IsIndeterminate="False" ShowPaused="True" ShowError="False"/>
-            <ListView x:Name="BooksList"  ItemsSource="{x:Bind Books}" ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}" SelectionMode="Multiple"/>
+            <ListView x:Name="BooksList"  ItemsSource="{x:Bind Books}" ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}" SelectionMode="Single"/>
             <Button Content="Begin Learning" FontSize="18" Margin="20" Click="Button_Click"/>
             <Button Content="Home" FontSize="18" Margin="20" Click="Button_Click_1"/>
         </StackPanel>
