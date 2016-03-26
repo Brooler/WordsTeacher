@@ -24,7 +24,7 @@ namespace WordsTeacher.UwpClient.Views
     /// </summary>
     public sealed partial class DeleteWordCard : Page
     {
-        DeleteWordCardsViewModel VM = new DeleteWordCardsViewModel();
+        private WordCard VM;
         public DeleteWordCard()
         {
             this.InitializeComponent();
@@ -33,23 +33,17 @@ namespace WordsTeacher.UwpClient.Views
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            LoadCardsProgress.IsActive = true;
-            await VM.CardsInitializer();
-            LoadCardsProgress.IsActive = false;
+            VM = e.Parameter as WordCard;
+            WordBookTitle.Text = (await WordBooksApiRequest.GetWordBook(VM.BookId)).Title;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            WordCard card = (WordCard) CardSelector.SelectedItem;
             DeleteProgress.IsActive = true;
-            await WordCardsApiRequest.DeleteWordCard(card.Id);
+            await WordCardsApiRequest.DeleteWordCard(VM.Id);
             DeleteProgress.IsActive = false;
-            ResultText.Text=String.Format("{0} ({1}) was deleted", card.Word, card.Translation);
+            ResultText.Text=String.Format("{0} ({1}) was deleted", VM.Word, VM.Translation);
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (MainPage));
-        }
+        
     }
 }

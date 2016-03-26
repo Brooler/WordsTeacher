@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-03-25T20:17:55.003</Modified>
+      <Modified>2016-03-26T22:35:11.004</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\bin\x86\Debug\WordsTeacher.UwpClient.exe">
       <PackagePath>entrypoint\WordsTeacher.UwpClient.exe</PackagePath>
-      <Modified>2016-03-25T20:17:06.536</Modified>
+      <Modified>2016-03-26T22:35:09.834</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marya\.nuget\packages\Microsoft.AspNet.WebApi.Client\5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
       <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
@@ -498,7 +498,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\bin\x86\Debug\WordsTeacher.UwpClient.xr.xml">
       <PackagePath>WordsTeacher.UwpClient.xr.xml</PackagePath>
-      <Modified>2016-03-25T15:28:34.167</Modified>
+      <Modified>2016-03-26T22:35:09.417</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -506,11 +506,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-03-25T20:17:10.487</Modified>
+      <Modified>2016-03-26T22:35:10.636</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marya\OneDrive\Development\Cross Platform Solutions\WordsTeacher\WordsTeacher.UwpClient\bin\x86\Debug\Core\WordsTeacher.UwpClient.exe">
       <PackagePath>WordsTeacher.UwpClient.exe</PackagePath>
-      <Modified>2016-03-25T20:17:54.989</Modified>
+      <Modified>2016-03-26T22:35:10.993</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

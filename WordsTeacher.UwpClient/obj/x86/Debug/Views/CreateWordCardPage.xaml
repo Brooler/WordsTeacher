@@ -27,14 +27,13 @@
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Word Book:" Margin="10" FontSize="28"/>
             <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Word:" Margin="10" FontSize="28"/>
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Translation:" Margin="10" FontSize="28"/>
-            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250">
-                <ComboBox x:ConnectionId='7' x:Name="BookSelect" FontSize="20"                                 Width="200"/>
-                <ProgressRing x:ConnectionId='8' x:Name="LoadingListRing" Margin="10,0,0,0" Height="35" Width="35" IsActive="False"/>
+            <TextBlock x:ConnectionId='3' x:Name="WordBookTitle" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="28"></TextBlock>
+            <TextBox x:ConnectionId='4' x:Name="WordInput" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20"                                     />
+            <TextBox x:ConnectionId='5' x:Name="TranslationInput" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20"                                            />
+            <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Button x:ConnectionId='6' Content="Submit" FontSize="20" Margin="10"                     />
+                <ProgressRing x:ConnectionId='7' x:Name="SubmitDataProgress"/>
             </StackPanel>
-            <TextBox x:ConnectionId='3' x:Name="WordInput" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20"                                     />
-            <TextBox x:ConnectionId='4' x:Name="TranslationInput" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20"                                            />
-            <Button x:ConnectionId='5' Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Submit" FontSize="20" Margin="10"                     />
-            <Button x:ConnectionId='6' Content="Home" FontSize="18" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7"                        />
         </Grid>
     </Grid>
 </Page>

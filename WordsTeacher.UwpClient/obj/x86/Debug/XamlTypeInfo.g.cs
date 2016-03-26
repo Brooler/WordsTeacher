@@ -139,9 +139,9 @@ namespace WordsTeacher.UwpClient.WordsTeacher_UwpClient_XamlTypeInfo
             _typeNameTable[3] = "WordsTeacher.UwpClient.CreateWordCardPage";
             _typeNameTable[4] = "WordsTeacher.UwpClient.Views.DeleteWordBookPage";
             _typeNameTable[5] = "WordsTeacher.UwpClient.Views.DeleteWordCard";
-            _typeNameTable[6] = "WordsTeacher.UwpClient.EditPage";
-            _typeNameTable[7] = "WordsTeacher.UwpClient.MainPage";
-            _typeNameTable[8] = "WordsTeacher.UwpClient.WordBookItems";
+            _typeNameTable[6] = "WordsTeacher.UwpClient.MainPage";
+            _typeNameTable[7] = "WordsTeacher.UwpClient.WordBookItems";
+            _typeNameTable[8] = "WordsTeacher.UwpClient.Views.WordCardItems";
 
             _typeTable = new global::System.Type[9];
             _typeTable[0] = typeof(global::WordsTeacher.UwpClient.CreateWordBookPage);
@@ -150,9 +150,9 @@ namespace WordsTeacher.UwpClient.WordsTeacher_UwpClient_XamlTypeInfo
             _typeTable[3] = typeof(global::WordsTeacher.UwpClient.CreateWordCardPage);
             _typeTable[4] = typeof(global::WordsTeacher.UwpClient.Views.DeleteWordBookPage);
             _typeTable[5] = typeof(global::WordsTeacher.UwpClient.Views.DeleteWordCard);
-            _typeTable[6] = typeof(global::WordsTeacher.UwpClient.EditPage);
-            _typeTable[7] = typeof(global::WordsTeacher.UwpClient.MainPage);
-            _typeTable[8] = typeof(global::WordsTeacher.UwpClient.WordBookItems);
+            _typeTable[6] = typeof(global::WordsTeacher.UwpClient.MainPage);
+            _typeTable[7] = typeof(global::WordsTeacher.UwpClient.WordBookItems);
+            _typeTable[8] = typeof(global::WordsTeacher.UwpClient.Views.WordCardItems);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -191,9 +191,9 @@ namespace WordsTeacher.UwpClient.WordsTeacher_UwpClient_XamlTypeInfo
         private object Activate_3_CreateWordCardPage() { return new global::WordsTeacher.UwpClient.CreateWordCardPage(); }
         private object Activate_4_DeleteWordBookPage() { return new global::WordsTeacher.UwpClient.Views.DeleteWordBookPage(); }
         private object Activate_5_DeleteWordCard() { return new global::WordsTeacher.UwpClient.Views.DeleteWordCard(); }
-        private object Activate_6_EditPage() { return new global::WordsTeacher.UwpClient.EditPage(); }
-        private object Activate_7_MainPage() { return new global::WordsTeacher.UwpClient.MainPage(); }
-        private object Activate_8_WordBookItems() { return new global::WordsTeacher.UwpClient.WordBookItems(); }
+        private object Activate_6_MainPage() { return new global::WordsTeacher.UwpClient.MainPage(); }
+        private object Activate_7_WordBookItems() { return new global::WordsTeacher.UwpClient.WordBookItems(); }
+        private object Activate_8_WordCardItems() { return new global::WordsTeacher.UwpClient.Views.WordCardItems(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -241,23 +241,23 @@ namespace WordsTeacher.UwpClient.WordsTeacher_UwpClient_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 6:   //  WordsTeacher.UwpClient.EditPage
+            case 6:   //  WordsTeacher.UwpClient.MainPage
                 userType = new global::WordsTeacher.UwpClient.WordsTeacher_UwpClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_EditPage;
+                userType.Activator = Activate_6_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  WordsTeacher.UwpClient.MainPage
+            case 7:   //  WordsTeacher.UwpClient.WordBookItems
                 userType = new global::WordsTeacher.UwpClient.WordsTeacher_UwpClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_MainPage;
+                userType.Activator = Activate_7_WordBookItems;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  WordsTeacher.UwpClient.WordBookItems
+            case 8:   //  WordsTeacher.UwpClient.Views.WordCardItems
                 userType = new global::WordsTeacher.UwpClient.WordsTeacher_UwpClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_WordBookItems;
+                userType.Activator = Activate_8_WordCardItems;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -27,14 +27,13 @@
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Word Book:" Margin="10" FontSize="28"/>
             <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Word:" Margin="10" FontSize="28"/>
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Translation:" Margin="10" FontSize="28"/>
-            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250">
-                <ComboBox x:Name="BookSelect" FontSize="20" ItemsSource="{x:Bind VM.Books}" Width="200"/>
-                <ProgressRing x:Name="LoadingListRing" Margin="10,0,0,0" Height="35" Width="35" IsActive="False"/>
-            </StackPanel>
+            <TextBlock x:Name="WordBookTitle" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="28"></TextBlock>
             <TextBox x:Name="WordInput" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20" Text="{x:Bind VM.Word, Mode=TwoWay}"/>
             <TextBox x:Name="TranslationInput" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20" Text="{x:Bind VM.Translation, Mode=TwoWay}"/>
-            <Button Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Submit" FontSize="20" Margin="10" Click="Button_Click"/>
-            <Button Content="Home" FontSize="18" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Click="Button_Click_1" />
+            <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Button Content="Submit" FontSize="20" Margin="10" Click="Button_Click"/>
+                <ProgressRing x:Name="SubmitDataProgress"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

@@ -96,7 +96,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CreateBookViewModel.cs" />
-    <Compile Include="ViewModels\DeleteWordBookViewModel.cs" />
     <Compile Include="ViewModels\DeleteWordCardsViewModel.cs" />
     <Compile Include="Views\CreateWordBookPage.xaml.cs">
       <DependentUpon>CreateWordBookPage.xaml</DependentUpon>
@@ -110,9 +109,6 @@
     <Compile Include="Views\DeleteWordCard.xaml.cs">
       <DependentUpon>DeleteWordCard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditPage.xaml.cs">
-      <DependentUpon>EditPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -123,6 +119,9 @@
     <Compile Include="ViewModels\WordBookItemsViewModel.cs" />
     <Compile Include="Views\WordBookItems.xaml.cs">
       <DependentUpon>WordBookItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WordCardItems.xaml.cs">
+      <DependentUpon>WordCardItems.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -162,15 +161,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EditPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\WordBookItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WordCardItems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

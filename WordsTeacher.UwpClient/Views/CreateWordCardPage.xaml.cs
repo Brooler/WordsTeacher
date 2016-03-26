@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using WordsTeacher.UwpClient.Models;
 using WordsTeacher.UwpClient.ViewModels;
+using WordsTeacher.UwpClient.Views;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,7 +25,8 @@ namespace WordsTeacher.UwpClient
     /// </summary>
     public sealed partial class CreateWordCardPage : Page
     {
-        EditWordCardViewModel VM = new EditWordCardViewModel();
+        WordCard VM;
+        private bool IsNewCard;
         public CreateWordCardPage()
         {
             this.InitializeComponent();
@@ -44,28 +46,37 @@ namespace WordsTeacher.UwpClient
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            LoadingListRing.IsActive = true;
-            await VM.BooksInitialize();
-            LoadingListRing.IsActive = false;
+            VM = e.Parameter as WordCard;
+            if (VM != null)
+            {
+                WordBookTitle.Text = (await WordBooksApiRequest.GetWordBooksList()).FirstOrDefault(m => m.Id == VM.Id).Title;
+                IsNewCard = false;
+            }
+            else
+            {
+                VM = new WordCard();
+                VM.BookId = (e.Parameter as WordBook).Id;
+                WordBookTitle.Text = (e.Parameter as WordBook).Title;
+                IsNewCard = true;
+            }
+            
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            WordCard card = new WordCard()
+            SubmitDataProgress.IsActive = true;
+            if (IsNewCard)
             {
-                Score=0,
-                Word = VM.Word,
-                Translation = VM.Translation,
-                BookId = VM.books.FirstOrDefault(m=>m.Title==BookSelect.SelectedItem.ToString()).Id
-            };
-            Header.Text = "Loading...";
-            await WordCardsApiRequest.AddWordCard(card);
-            Header.Text = "Ready!";
+                await WordCardsApiRequest.AddWordCard(VM);
+                Frame.Navigate(typeof (WordCardItems), await WordBooksApiRequest.GetWordBook(VM.BookId));
+            }
+            else
+            {
+                await WordCardsApiRequest.UpdateWordCard(VM.Id, VM);
+                Frame.Navigate(typeof(WordBookItems));
+            }
+            SubmitDataProgress.IsActive = false;
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (MainPage));
-        }
+        
     }
 }

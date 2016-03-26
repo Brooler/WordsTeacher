@@ -7,6 +7,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using WordsTeacher.UwpClient.Models;
 using WordsTeacher.UwpClient.ViewModels;
+using WordsTeacher.UwpClient.Views;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -47,17 +48,6 @@ namespace WordsTeacher.UwpClient
                 Books.Add(book);
             }
         }
-        //Add Button
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (CreateWordCardPage));
-        }
-        //Edit Button
-        private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (CreateWordBookPage), 
-                ((WordBookItemsViewModel)BooksList.SelectedItem).Book);
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -70,6 +60,39 @@ namespace WordsTeacher.UwpClient
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof (MainPage));
+        }
+        //Edit Button (HyperLink)
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            WordBook model = Books.FirstOrDefault(m => m.Book.Id == (int)((HyperlinkButton) sender).Tag).Book;
+            Frame.Navigate(typeof (CreateWordBookPage), model);
+        }
+        //Add Button (HyperLink)
+        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            WordBook model = Books.FirstOrDefault(m => m.Book.Id == (int) ((HyperlinkButton) sender).Tag).Book;
+            Frame.Navigate(typeof (CreateWordCardPage), model);
+        }
+
+        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
+        {
+            WordBook model = Books.FirstOrDefault(m => m.Book.Id == (int)((HyperlinkButton)sender).Tag).Book;
+            Frame.Navigate(typeof (DeleteWordBookPage), model);
+        }
+
+        private void BooksList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frame.Navigate(typeof (WordCardItems), BooksList.SelectedItem);
+        }
+
+        private void BooksList_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(WordCardItems), (BooksList.SelectedItem as WordBookItemsViewModel).Book);
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (CreateWordBookPage));
         }
     }
 }

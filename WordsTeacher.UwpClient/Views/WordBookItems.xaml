@@ -20,10 +20,17 @@
                     <TextBlock Text="{x:Bind WordsNumber}" Style="{StaticResource BaseTextBlockStyle}"
                         Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                 </StackPanel>
-                <CommandBar Background="Transparent" IsOpen="False" Width="200" HorizontalAlignment="Right">
-                    <AppBarButton Icon="Add" Label="Add Word Card" Click="AppBarButton_Click"/>
-                    <AppBarButton Icon="Edit" Label="Edit Book" Click="AppBarButton_Click_1"/>
-                </CommandBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <HyperlinkButton Tag="{x:Bind Book.Id}" Margin="10" Click="HyperlinkButton_Click">
+                    <SymbolIcon Symbol="Edit"/>
+                </HyperlinkButton>
+                <HyperlinkButton Tag="{x:Bind Book.Id}" Margin="10" Click="HyperlinkButton_Click_1">
+                    <SymbolIcon Symbol="Add"/>
+                </HyperlinkButton>
+                    <HyperlinkButton Tag="{x:Bind Book.Id}" Margin="10" Click="HyperlinkButton_Click_2">
+                        <SymbolIcon Symbol="Delete"/>
+                    </HyperlinkButton>
+                </StackPanel>
             </Grid>
         </DataTemplate>
     </Page.Resources>
@@ -31,9 +38,10 @@
         <StackPanel>
             <TextBlock x:Name="Header" Text="Word Books List" Style="{StaticResource HeaderTextBlockStyle}" Margin="10"/>
             <ProgressBar x:Name="LoadingBar" IsIndeterminate="False" ShowPaused="True" ShowError="False"/>
-            <ListView x:Name="BooksList"  ItemsSource="{x:Bind Books}" ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}" SelectionMode="Single"/>
-            <Button Content="Begin Learning" FontSize="18" Margin="20" Click="Button_Click"/>
-            <Button Content="Home" FontSize="18" Margin="20" Click="Button_Click_1"/>
+            <ListView x:Name="BooksList"  ItemsSource="{x:Bind Books}" ItemTemplate="{StaticResource ImageTextListMailFolderTemplate}" SelectionMode="Single" ItemClick="BooksList_ItemClick" DoubleTapped="BooksList_DoubleTapped"/>
         </StackPanel>
+        <CommandBar IsOpen="False" VerticalAlignment="Bottom">
+            <AppBarButton Icon="Add" Label="Add new word book" Click="AppBarButton_Click"/>
+        </CommandBar>
     </Grid>
 </Page>

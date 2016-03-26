@@ -24,31 +24,23 @@ namespace WordsTeacher.UwpClient.Views
     /// </summary>
     public sealed partial class DeleteWordBookPage : Page
     {
-        DeleteWordBookViewModel VM = new DeleteWordBookViewModel();
+        private WordBook VM;
         public DeleteWordBookPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            LoadBooksTitle.IsActive = true;
-            await VM.TitlesInitializer();
-            LoadBooksTitle.IsActive = false;
+            VM = e.Parameter as WordBook;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            WordBook book = (WordBook)BookSelector.SelectedItem;
-            DeleteProgress.IsActive = true;
-            await WordBooksApiRequest.DeleteWordBook(book.Id);
+            await WordBooksApiRequest.DeleteWordBook(VM.Id);
             DeleteProgress.IsActive = false;
-            ResultText.Text = String.Format("{0} was deleted.", book.Title);
+            ResultText.Text = string.Format("{0} was deleted.", VM.Title);
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (MainPage));
-        }
+        
     }
 }

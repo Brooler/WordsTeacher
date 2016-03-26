@@ -1,0 +1,44 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="WordsTeacher.UwpClient.Views.WordCardItems"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WordsTeacher.UwpClient.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:WordsTeacher.UwpClient.Models"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="WordCardItem"                           >
+            <Grid x:ConnectionId='2' Width="700">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock x:ConnectionId='5'                      Style="{StaticResource BaseTextBlockStyle}"
+                               Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                    <TextBlock x:ConnectionId='6'                             Style="{StaticResource BaseTextBlockStyle}"
+                               Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                    <TextBlock x:ConnectionId='7'                       Style="{StaticResource BaseTextBlockStyle}"
+                               Margin="8,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <HyperlinkButton x:ConnectionId='3'                   Margin="10"                              >
+                        <SymbolIcon Symbol="Edit"/>
+                    </HyperlinkButton>
+                    <HyperlinkButton x:ConnectionId='4'                   Margin="10"                                >
+                        <SymbolIcon Symbol="Delete"/>
+                    </HyperlinkButton>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical" Margin="10">
+            <TextBlock x:ConnectionId='10' x:Name="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
+            <ProgressBar x:ConnectionId='11' x:Name="LoadingProgress"/>
+            <ListView x:ConnectionId='12' x:Name="WordCardsList"                                  ItemTemplate="{StaticResource WordCardItem}"/>
+        </StackPanel>
+        <CommandBar IsOpen="False" VerticalAlignment="Bottom">
+            <AppBarButton x:ConnectionId='8' Icon="Add" Label="Add new card"                           />
+            <AppBarButton x:ConnectionId='9' Icon="Edit" Label="Edit word book"                             />
+        </CommandBar>
+    </Grid>
+</Page>
+

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,13 @@ namespace WordsTeacher.UwpClient.ViewModels
     {
         public string Word { get; set; }
         public string Translation { get; set; }
-        public List<string> Books { get; } = new List<string>();
-        public IEnumerable<WordBook> books { get; set; }
+        public ObservableCollection<WordBook> books { get; set; }
         public async Task BooksInitialize()
         {
-            books = await WordBooksApiRequest.GetWordBooksList();
-            foreach (var item in books)
+            books=new ObservableCollection<WordBook>();
+            foreach (var item in await WordBooksApiRequest.GetWordBooksList())
             {
-                Books.Add(item.Title);
+                books.Add(item);
             }
         }  
     }
