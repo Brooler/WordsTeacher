@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WordsTeacher.UwpClient.Models;
+﻿using WordsTeacher.UwpClient.Models;
 
 namespace WordsTeacher.UwpClient.ViewModels
 {
@@ -12,5 +6,6 @@ namespace WordsTeacher.UwpClient.ViewModels
     {
         public WordBook Book { get; set; }
         public int WordsNumber { get; set; }
+        public int LearnedWords { get; set; }
     }
 }

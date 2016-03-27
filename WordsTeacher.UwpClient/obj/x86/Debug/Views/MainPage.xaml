@@ -1,14 +1,44 @@
-﻿<Page
+﻿<Page x:ConnectionId='1'
     x:Class="WordsTeacher.UwpClient.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WordsTeacher.UwpClient"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:WordsTeacher.UwpClient.ViewModels"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <DataTemplate x:Key="BookItemTemplate"                                              >
+            <Grid x:ConnectionId='2'>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:ConnectionId='3' Grid.Column="0" Style="{StaticResource BaseTextBlockStyle}"                                         VerticalAlignment="Center"/>
+                <TextBlock x:ConnectionId='4' Grid.Column="1" Style="{StaticResource BaseTextBlockStyle}"                                                 VerticalAlignment="Center"/>
+                <TextBlock x:ConnectionId='5' Grid.Column="2" Style="{StaticResource BaseTextBlockStyle}"                                                  VerticalAlignment="Center"/>
+                <TextBlock x:ConnectionId='6' Grid.Column="3" Style="{StaticResource BaseTextBlockStyle}"                                          VerticalAlignment="Center"/>
+                <TextBlock x:ConnectionId='7' Grid.Column="4" Style="{StaticResource BaseTextBlockStyle}"                                           VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:ConnectionId='1' x:Name="EditPage" Content="Open Edit Page" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"                       />
+        <Grid Background="LightGray" Margin="0,0,0,40" HorizontalAlignment="Left" Width="500">
+            <StackPanel Margin="10,10,0,0">
+                <TextBlock x:ConnectionId='9' x:Name="Header" Style="{StaticResource HeaderTextBlockStyle}" Text="Word Learning App"/>
+                <ProgressBar x:ConnectionId='10' x:Name="LoadingProgress"/>
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="Word Books" FontSize="24"></TextBlock>
+                <ListView x:ConnectionId='11' x:Name="BooksList"                                           ItemTemplate="{StaticResource BookItemTemplate}"                                     />
+            </StackPanel>
+        </Grid>
+
+        <CommandBar IsOpen="False" VerticalAlignment="Bottom">
+            <AppBarButton x:ConnectionId='8' Icon="Edit" Label="Edit Words Data"                           />
+            <AppBarButton Icon="Setting" Label="Settings"/>
+        </CommandBar>
     </Grid>
 </Page>
 

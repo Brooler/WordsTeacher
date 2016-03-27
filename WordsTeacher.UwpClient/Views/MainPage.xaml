@@ -5,9 +5,39 @@
     xmlns:local="using:WordsTeacher.UwpClient"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:WordsTeacher.UwpClient.ViewModels"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <DataTemplate x:Key="BookItemTemplate" x:DataType="viewmodel:WordBookItemsViewModel">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Style="{StaticResource BaseTextBlockStyle}" Text="{x:Bind Book.Title, Mode=OneWay}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Style="{StaticResource BaseTextBlockStyle}" Text="{x:Bind Book.InputLanguage, Mode=OneWay}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Style="{StaticResource BaseTextBlockStyle}" Text="{x:Bind Book.OutputLanguage, Mode=OneWay}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="3" Style="{StaticResource BaseTextBlockStyle}" Text="{x:Bind WordsNumber, Mode=OneWay}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="4" Style="{StaticResource BaseTextBlockStyle}" Text="{x:Bind LearnedWords, Mode=OneWay}" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="EditPage" Content="Open Edit Page" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="EditPage_Click"/>
+        <Grid Background="LightGray" Margin="0,0,0,40" HorizontalAlignment="Left" Width="500">
+            <StackPanel Margin="10,10,0,0">
+                <TextBlock x:Name="Header" Style="{StaticResource HeaderTextBlockStyle}" Text="Word Learning App"/>
+                <ProgressBar x:Name="LoadingProgress"/>
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="Word Books" FontSize="24"></TextBlock>
+                <ListView x:Name="BooksList" ItemsSource="{x:Bind Books, Mode=OneWay}" ItemTemplate="{StaticResource BookItemTemplate}" DoubleTapped="ListView_DoubleTapped"/>
+            </StackPanel>
+        </Grid>
+
+        <CommandBar IsOpen="False" VerticalAlignment="Bottom">
+            <AppBarButton Icon="Edit" Label="Edit Words Data" Click="AppBarButton_Click"/>
+            <AppBarButton Icon="Setting" Label="Settings"/>
+        </CommandBar>
     </Grid>
 </Page>

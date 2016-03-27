@@ -4,5 +4,6 @@ Views\CreateWordCardPage.xbf
 Views\DeleteWordBookPage.xbf
 Views\DeleteWordCard.xbf
 Views\MainPage.xbf
+Views\TestPage.xbf
 Views\WordBookItems.xbf
 Views\WordCardItems.xbf
