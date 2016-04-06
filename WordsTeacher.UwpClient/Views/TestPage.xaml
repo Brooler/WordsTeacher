@@ -24,7 +24,8 @@
             </StackPanel>
             <StackPanel Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
                 <ProgressRing x:Name="SubmittingProgress"/>
-                <Button x:Name="SubmitButton"  Content="Submit" FontSize="20" Click="SubmitButton_Click"/>
+                <Button x:Name="AnswerButton" Content="Submit" Click="AnswerButton_Click" />
+                <Button x:Name="NextItem" Content="Next" Visibility="Collapsed" Click="NextItem_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

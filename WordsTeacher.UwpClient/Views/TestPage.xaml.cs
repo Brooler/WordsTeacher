@@ -26,7 +26,7 @@ namespace WordsTeacher.UwpClient.Views
     public sealed partial class TestPage : Page
     {
         private TestViewModel VM = new TestViewModel();
-        private bool IsFirstSubmitClick = true;
+        private int ScoreValue { get; set; } = 10;
         public TestPage()
         {
             this.InitializeComponent();
@@ -39,56 +39,66 @@ namespace WordsTeacher.UwpClient.Views
             CurrentCardSelect();
         }
 
-        private async void SubmitButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (IsRightAnswer() && IsFirstSubmitClick)
-            {
-                SubmitButton.Background = new SolidColorBrush(Colors.LightGreen);
-                TranslationText.IsReadOnly = true;
-                IsFirstSubmitClick = false;
-            }
-            else if (IsFirstSubmitClick)
-            {
-                SubmitButton.Background = new SolidColorBrush(Colors.LightCoral);
-                TranslationText.IsReadOnly = true;
-                IsFirstSubmitClick = false;
-            }
-            if (!IsFirstSubmitClick)
-            {
-                SubmittingProgress.IsActive = true;
-                if (IsRightAnswer())
-                {
-                    VM.CurrentWord.Score += 10;
-                    await WordCardsApiRequest.UpdateWordCard(VM.CurrentWord.Id, VM.CurrentWord);
-                }
-                if (VM.Words.Count > 0)
-                {
-                    CurrentCardSelect();
-                }
-                WordText.Text = VM.CurrentWord.Word;
-                IsFirstSubmitClick = true;
-                SubmittingProgress.IsActive = false;
-                TranslationText.IsReadOnly = false;
-            }
-        }
-
         private void CurrentCardSelect()
         {
             Random rnd = new Random();
-            int index = rnd.Next(0, VM.Words.Count);
-            VM.CurrentWord = VM.Words[index];
-            VM.Words.Remove(VM.Words[index]);
+            VM.CurrentWord = VM.Words[rnd.Next(VM.Words.Count)];
+            VM.Words.Remove(VM.CurrentWord);
         }
-        private bool IsRightAnswer()
+        private void AnswerButton_Click(object sender, RoutedEventArgs e)
         {
-            if (TranslationText.Text == VM.CurrentWord.Translation)
+            if (IsRightAnswer(TranslationText.Text))
             {
-                return true;
+                NextItem.Background = new SolidColorBrush(Colors.LightGreen);
+                ScoreUp();
             }
             else
             {
-                return false;
+                NextItem.Background=new SolidColorBrush(Colors.LightCoral);
             }
+            AnswerButton.Visibility = Visibility.Collapsed;
+            NextItem.Visibility=Visibility.Visible;
+            TranslationText.IsReadOnly = true;
+        }
+
+        private bool IsRightAnswer(string answer)
+        {
+            if (VM.CurrentWord.Translation == answer) return true;
+            else return false;
+        }
+
+        private async void ScoreUp()
+        {
+            VM.CurrentWord.Score += ScoreValue;
+            await WordCardsApiRequest.UpdateWordCard(VM.CurrentWord.Id, VM.CurrentWord);
+        }
+
+        private void NextItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (CanSelectNextItem())
+            {
+                CurrentCardSelect();
+                ViewRefresh();
+            }
+            else
+            {
+                Frame.Navigate(typeof (MainPage));
+            }
+        }
+
+        private void ViewRefresh()
+        {
+            NextItem.Visibility=Visibility.Collapsed;
+            AnswerButton.Visibility=Visibility.Visible;
+            WordText.Text = VM.CurrentWord.Word;
+            TranslationText.IsReadOnly = false;
+            TranslationText.Text = "";
+        }
+
+        private bool CanSelectNextItem()
+        {
+            if (!(VM.Words.Count == 0)) return true;
+            else return false;
         }
     }
 }

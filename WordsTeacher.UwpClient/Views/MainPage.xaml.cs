@@ -64,7 +64,15 @@ namespace WordsTeacher.UwpClient
         {
             WordBook book = (BooksList.SelectedItem as WordBookItemsViewModel).Book;
             List<WordCard> cards = (await WordCardsApiRequest.GetWordCardsList()).Where(m=>m.BookId==book.Id).ToList();
-            if (cards != null)
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (cards[i].Score == 100)
+                {
+                    cards.Remove(cards[i]);
+                    i--;
+                }
+            }
+            if (cards != null && cards.Count!=0)
             {
                 while (cards.Count > 10)
                 {

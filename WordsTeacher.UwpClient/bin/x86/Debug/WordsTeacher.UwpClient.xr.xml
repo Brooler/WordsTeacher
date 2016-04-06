@@ -64,6 +64,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Visibility" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
